@@ -4,6 +4,8 @@ var ri2c = require('./build/Release/rI2C');
 
 var DEBUG = 1;
 
+//BMP085
+
 // addresses
 var ADDRESS = 0x77;
 var DATA_ADDRESS = 0xF6;
