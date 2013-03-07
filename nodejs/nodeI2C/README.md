@@ -1,28 +1,37 @@
-node-SPI
+node-I2C
 ========
 
-This is a library made as a wrapper around ioctl to controll SPI ports in 
-embedded linux.  It has been tested with the raspberry Pi and an mcp3008 chip
-only, though I expect it to work elsewhere with other ICs as well.
-
-If you find any bugs or have any patches please let me know!
+This is a library made as a wrapper around ioctl to controll I2C ports in 
+embedded linux.  It has been tested with the raspberry Pi and an BMP085 chip
+only.
 
 
 Usage
 -----
 
 rom nodejs script include with
-    var spi = require('./path/to/module/rSPI')
+    var i2c = require('./path/to/module/rI2C')
 or place module in an appropriate node_modules directory.
 
 Functions:
 
-    spi.configSPI(mode,max_clock,device)
-        takes SPI mode, clock rate, and device path (eg /dev/spidev0.1 )
-        If system defaults are okay then no need to call configSPI
-    spi.readwriteSPI(tx_data,device)
-        takes a device path, and an array of numbers interpreted as bytes
-        writes bytes and returs the same number of read bytes from spidev
+    i2c._initI2C_(addr)
+	take address addr of the device. It initialize the device.
+
+    i2c.readU8(reg)
+	read an unsigned 8-bits value from register reg.
+
+    i2c.readS8(reg)
+	read a signed 8-bits value from register reg.
+
+    i2c.readU16(reg)
+	read an unsigned 16-bits value from register reg.
+
+    i2c.readS16(reg)
+	read an signed 16-bits value from register reg.
+
+    i2c.write8(reg, data)
+    	write an 8-bits value data to register reg.
 
 See code comments for more details.
 
@@ -36,13 +45,15 @@ Build Instructions
 
     npm install -g node-gyp
 
+* wiringPi -- this is a handy library for different kind of wiring protocol. (https://projects.drogon.net/raspberry-pi/)
+
 ### to build you must first configure
     node-gyp configure
 ### and finally build
     node-gyp build
 
 the addon is now in /build/Release/*.node
-to use the addon move rSPI.node to either the global node_modules directory or
+to use the addon move rI2C.node to either the global node_modules directory or
 place it in a your a folder called node_modules with in your project directory
 
 

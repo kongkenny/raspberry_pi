@@ -21,7 +21,7 @@ int _initI2C_(uint16_t addr);
 /*
  * Read an unsigned 8-bits integer
  * 
- * @param addr the address where the data is stored
+ * @param reg the register where the data is stored
  * @return the value that stored in addr
  */
 uint8_t readU8(uint16_t reg);
@@ -29,7 +29,7 @@ uint8_t readU8(uint16_t reg);
 /*
  * Read a signed 8-bits integer
  *
- * @param addr the address where the data is stored
+ * @param reg the register where the data is stored
  * @return the value that stored in addr
  */
 int8_t readS8(uint16_t reg);
@@ -37,7 +37,7 @@ int8_t readS8(uint16_t reg);
 /*
  * Read an unsigned 16-bits integer
  *
- * @param addr the address where the data is stored
+ * @param reg the register where the data is stored
  * @return the value that stored in addr
  */
 uint16_t readU16(uint16_t reg);
@@ -45,7 +45,7 @@ uint16_t readU16(uint16_t reg);
 /*
  * Read a signed 16-bits integer
  *
- * @param addr the address where the data is stored
+ * @param reg the register where the data is stored
  * @return the value that stored in addr
  */
 int16_t readS16(uint16_t reg);
@@ -53,7 +53,7 @@ int16_t readS16(uint16_t reg);
 /*
  * Write an 8-bits data to address addr
  *
- * @param addr the address to write to
+ * @param reg the register to write to
  * @param data the data to be written
  * @return 
  */
