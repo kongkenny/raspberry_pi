@@ -16,7 +16,7 @@ def get_ip_addr(ifname) :
 print "IP Address: ",  get_ip_addr('wlan0');
 print "Sending email..."
 
-login, password = "kong.kenny@gmail.com", getpass('Gmail password: ');
+login, password = "<<your email>>", getpass('Gmail password: ');
 
 msg = MIMEText(get_ip_addr("wlan0"));
 msg['Subject'] = Header("My Raspberry Pi IP", "utf-8");
